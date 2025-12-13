@@ -1,0 +1,10 @@
+external:
+  domain: redpanda.ashudev.in
+
+statefulset:
+  podAntiAffinity:
+    type: soft
+  initContainers:
+    setDataDirOwnership:
+      enabled: true
+
