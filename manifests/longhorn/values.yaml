@@ -1,0 +1,20 @@
+global:
+  tolerations: []
+  nodeSelector: {}
+
+persistence:
+  defaultClassReplicaCount: 2
+  volumeBindingMode: WaitForFirstConsumer
+  disableRevisionCounter: "false"
+
+defaultSettings:
+  storageOverProvisioningPercentage: "80"
+  autoSalvage: "true"
+  replicaAutoBalance: "best-effort"
+  storageMinimalAvailablePercentage: "20"
+
+service:
+  ui:
+    type: NodePort
+    nodePort: 30011
+

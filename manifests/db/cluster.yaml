@@ -36,7 +36,7 @@ spec:
         requests:
           storage: 20Gi
     name: postgres
-    replicas: 3
+    replicas: 2
   #config:
   #  parameters:
   #    max_parallel_workers: 2
