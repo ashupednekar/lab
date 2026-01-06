@@ -1,11 +1,43 @@
 global:
   security:
     allowInsecureImages: true
-auth:
-  rootUser: minioadmin 
-  rootPassword: minioadmin 
+
 image:
   repository: bitnamilegacy/minio
+
+auth:
+  rootUser: ashudev
+  rootPassword: minioadmin
+
+mode: standalone
+defaultBuckets: content
+
+persistence:
+  enabled: true
+  storageClass: longhorn
+  size: 15Gi
+
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  hostname: lab.ashudev.in
+  path: /content
+  pathType: Prefix
+  tls: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+
 console:
+  enabled: true
   image:
     repository: bitnamilegacy/minio-object-browser
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hostname: s3.ashudev.in
+    path: /
+    pathType: Prefix
+    tls: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+
