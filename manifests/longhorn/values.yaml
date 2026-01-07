@@ -13,8 +13,10 @@ defaultSettings:
   replicaAutoBalance: "best-effort"
   storageMinimalAvailablePercentage: "20"
 
-service:
-  ui:
-    type: NodePort
-    nodePort: 30011
-
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  host: csi.lab.ashudev.in
+  tls: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
