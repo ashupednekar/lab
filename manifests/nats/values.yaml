@@ -1,0 +1,15 @@
+natsBox:
+  enabled: false
+config:
+  cluster:
+    enabled: true
+    replicas: 3
+  jetstream:
+    enabled: true
+    fileStore:
+      enabled: true
+      pvc:
+        enabled: true
+        size: 4Gi
+  reloader:
+    enabled: false
