@@ -1,8 +1,6 @@
 apiVersion: postgres-operator.crunchydata.com/v1beta1
 kind: PostgresCluster
 metadata:
-  labels:
-    app.kubernetes.io/managed-by: Helm
   name: db
   namespace: essentials
 spec:
@@ -34,7 +32,7 @@ spec:
       - ReadWriteOnce
       resources:
         requests:
-          storage: 20Gi
+          storage: 15Gi
     name: postgres
     replicas: 2
   #config:

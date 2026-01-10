@@ -13,6 +13,16 @@ spec:
   - repoURL: ghcr.io/ashupednekar/charts
     targetRevision: x
     chart: litefunctions
+    helm:
+      values: |
+        nats:
+          cluster:
+            enabled: false
+          jetstream:
+            enabled: false
+          persistence:
+            enabled: false
+          replicaCount: 1
   #  helm:
   #    valueFiles:
   #    - $values/values.yaml

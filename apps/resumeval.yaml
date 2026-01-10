@@ -13,6 +13,12 @@ spec:
   - repoURL: ghcr.io/ashupednekar/charts
     targetRevision: x
     chart: resumeval
+    helm:
+      values: |
+        s3:
+          endpoint: minio.essentials.svc:9000
+          access_key: ashudev
+          secret_key: minioadmin
   #  helm:
   #    valueFiles:
   #    - $values/values.yaml
